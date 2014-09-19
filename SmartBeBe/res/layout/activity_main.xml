@@ -94,31 +94,31 @@
         <ListView
             android:id="@+id/navi_menulist1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:dividerHeight="1dip" />
         
         <View
             android:layout_width="match_parent"
             android:layout_height="1dip"
-            android:background="#ffffff" />
+            android:layout_marginBottom="10dip"
+            android:background="#000000" />
         
-        <LinearLayout 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="40dip"
+            android:background="#000000" />
+        
+        <ListView
+            android:id="@+id/navi_menulist2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10dip">
+            android:dividerHeight="1dip" />
         
-	        <Button
-	            android:id="@+id/navi_mypage_btn"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:text="마이페이지" />
-	        
-	        <Button
-	            android:id="@+id/navi_setting_btn"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:text="환경설정" />
-        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#000000" />
     
    	</LinearLayout>        
 </android.support.v4.widget.DrawerLayout>

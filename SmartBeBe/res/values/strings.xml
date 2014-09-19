@@ -12,5 +12,7 @@
     <string name="menu_vaccine">예방접종</string>
     <string name="menu_babyfood">이유식</string>
     <string name="menu_growth">성장 단계</string>
+    <string name="menu_mypage">마이페이지</string>
+    <string name="menu_setting">환경설정</string>
     
 </resources>
