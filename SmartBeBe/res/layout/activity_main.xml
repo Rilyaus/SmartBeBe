@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:background="#ffffff"
+    android:layout_height="match_parent" >
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearContainer" >
+    
+    	<RelativeLayout 
+    	    android:id="@+id/title_relative"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_gravity="center_vertical"
+        	android:background="#FFA7A7"
+        	android:padding="5dip" >
+    	
+    		<Button
+    	    	android:id="@+id/navi_toggle_btn"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:background="@drawable/navi_toggle_btn"/>
+    		<TextView
+    		    android:id="@+id/navi_bebe_btn"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:textColor="#ffffff"
+				android:textSize="20sp"
+				android:text="SmartBebe"/>
+    		
+    		<Button
+    	    	android:id="@+id/navi_toggle_btn"
+    	    	android:layout_width="wrap_content"
+    	    	android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:background="@drawable/navi_write_btn"/>
+    		
+    	</RelativeLayout>
+    	
+    	<LinearLayout 
+    	    android:layout_width="match_parent" 
+    	    android:layout_height="match_parent"
+    	    android:orientation="vertical"
+    	    android:id="@+id/mainview_linear" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/navi_linearlayout"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:choiceMode="singleChoice"
+        android:clickable="true"
+        android:dividerHeight="0dp"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:background="#EDEDED" >
+    	
+        <RelativeLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dip"
+            android:paddingTop="5dip"
+            android:background="#00C6ED" >
+    		
+            <ImageView
+                android:id="@+id/navi_name_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+                android:background="@drawable/smartbebe_logo_128x128" />
+            
+            <Button
+                android:id="@+id/navi_email_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="8dip"
+                android:paddingLeft="10dip"
+                android:background="#00FF0000"
+				android:layout_toRightOf="@+id/navi_name_image"
+				android:layout_centerVertical="true"
+                android:text="추사랑"
+                android:textSize="20sp"
+                android:textColor="#ffffff" />
+            
+        </RelativeLayout>
+        
+        <ListView
+            android:id="@+id/navi_menulist1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#ffffff" />
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip">
+        
+	        <Button
+	            android:id="@+id/navi_mypage_btn"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:text="마이페이지" />
+	        
+	        <Button
+	            android:id="@+id/navi_setting_btn"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:text="환경설정" />
+        </LinearLayout>
+    
+   	</LinearLayout>        
+</android.support.v4.widget.DrawerLayout>
