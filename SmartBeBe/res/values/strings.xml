@@ -5,6 +5,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="default_string">Default</string>
+    <string name="default_long_string">While North Korean athletes are in the South to promote cooperation through sportsmanship, a group of South Korean activists launched balloons carrying anti-Pyongyang leaflets across the border Sunday, in the face of warnings of retaliation from the North.
+About 10 members of the Fighters for Free North Korea released 10 large helium-filled balloons carrying 200,000 anti-North Korea leaflets into the North from a site in Paju, north of Seoul, according to footage shown on Seoul’s local television stations.Once the North’s main tool for southbound “psychological warfare” campaigns, balloons carrying leaflets with information about the outside world and basic goods have often been used by South Korean activists and defectors from the North. It’s an effective weapon, and the one that irks Pyongyang most.
+In response, the DPRK, the abbreviation for North Korea’s official name, the Democratic People’s Republic of Korea, routinely threatens to attack the launch sites. But last week Pyongyang ramped up pressure on Seoul to stop activists from floating propaganda leaflets, claiming that such activity was tantamount to “a graver provocation than military force.”</string>
     
     <string name="sample_name">추사랑</string>
 
@@ -15,4 +18,6 @@
     <string name="menu_mypage">마이페이지</string>
     <string name="menu_setting">환경설정</string>
     
+    <string name="diary_view_string">다이어리 보기</string>
+    <string name="calendar_view_string">달력 보기</string>
 </resources>

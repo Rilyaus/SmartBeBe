@@ -1,13 +1,17 @@
 package com.kw.smartbebe;
 
 import java.util.ArrayList;
+import java.util.Stack;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Paint;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.*;
@@ -20,6 +24,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	private Button navi_toggle_btn;
 	private ArrayList<Navigation_MenuList> naviMenuArr1, naviMenuArr2;
 	private NaviMenuListAdapter nAdapter1, nAdapter2;
+	
+	public static Stack<Fragment> homeStack = new Stack<Fragment>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		
 		Paint paint = new Paint();
 		paint.setARGB(0, 214, 245, 255);;
-		paint.setAlpha(220);
+		paint.setAlpha(240);
 		((LinearLayout)findViewById(R.id.navi_linearlayout)).setBackgroundColor(paint.getColor());
 		
 		setHomeTab();
@@ -79,20 +85,20 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		navi_listview1.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> av, View v, int position, long id) {
 				dlDrawer.closeDrawer(navi_lineaLayout);
-				
-			/*	Fragment temp = getSupportFragmentManager().findFragmentById(R.id.mainview_linear);
-				
-				Product_Tab_mCategoryList mCateFragment = new Product_Tab_mCategoryList();
-
+				Fragment temp = getSupportFragmentManager().findFragmentById(R.id.mainview_linear);
 				FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 				
-				Bundle args = new Bundle();
-
-				mCateFragment.setArguments(args);
-				ft.replace(R.id.mainview_linear, mCateFragment, "HomeTab");
+				switch((int)id) {
+					case 0 : {
+						Tab_Diary tDiaryFragment = new Tab_Diary();
+						
+						homeStack.push(temp);
+						ft.replace(R.id.mainview_linear, tDiaryFragment, "HomeTab");
+					}
+				}
 				ft.addToBackStack("HomeTab");
 				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-				ft.commitAllowingStateLoss();*/
+				ft.commitAllowingStateLoss();
 			}
 		});
 	
@@ -105,13 +111,25 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	}
 	
 	public void onBackPressed() {
-		new AlertDialog.Builder(MainActivity.this).setTitle("SmartBeBe")
-		.setMessage("앱을 종료하시겠습니까?").setNegativeButton("아니오", null)
-		.setPositiveButton("예", new DialogInterface.OnClickListener() {
-			public void onClick(DialogInterface dialog, int whichButton) {
-				finish();
+		Fragment fa = getSupportFragmentManager().findFragmentById(R.id.mainview_linear);
+		
+		try {
+			if( fa.getTag().equals("HomeTab") && homeStack.size() > 0 ) {
+				homeStack.pop();
+				getSupportFragmentManager().popBackStack();
 			}
-		}).show();
+			else {
+				new AlertDialog.Builder(MainActivity.this).setTitle("SmartBeBe")
+				.setMessage("앱을 종료하시겠습니까?").setNegativeButton("아니오", null)
+				.setPositiveButton("예", new DialogInterface.OnClickListener() {
+					public void onClick(DialogInterface dialog, int whichButton) {
+						finish();
+					}
+				}).show();
+			}
+		} catch( Exception e ) {
+			Log.d("sply", e.toString());
+			super.onBackPressed();
+		}
 	}
-	
 }
