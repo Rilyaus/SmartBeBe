@@ -94,6 +94,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 						
 						homeStack.push(temp);
 						ft.replace(R.id.mainview_linear, tDiaryFragment, "HomeTab");
+						break;
 					}
 				}
 				ft.addToBackStack("HomeTab");

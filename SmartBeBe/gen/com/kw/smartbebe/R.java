@@ -8,15 +8,20 @@
 package com.kw.smartbebe;
 
 public final class R {
+    public static final class array {
+        public static final int day=0x7f040002;
+        public static final int month=0x7f040001;
+        public static final int year=0x7f040000;
+    }
     public static final class attr {
     }
     public static final class color {
-        public static final int feed_bg=0x7f040001;
-        public static final int feed_item_bg=0x7f040002;
-        public static final int feed_item_border=0x7f040003;
-        public static final int link=0x7f040004;
-        public static final int timestamp=0x7f040005;
-        public static final int white=0x7f040000;
+        public static final int feed_bg=0x7f050001;
+        public static final int feed_item_bg=0x7f050002;
+        public static final int feed_item_border=0x7f050003;
+        public static final int link=0x7f050004;
+        public static final int timestamp=0x7f050005;
+        public static final int white=0x7f050000;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -26,19 +31,20 @@ public final class R {
          would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
-        public static final int feed_item_border_width=0x7f05000c;
-        public static final int feed_item_corner_radius=0x7f05000b;
-        public static final int feed_item_margin=0x7f050002;
-        public static final int feed_item_padding_left_right=0x7f050004;
-        public static final int feed_item_padding_top_bottom=0x7f050003;
-        public static final int feed_item_profile_info_padd=0x7f050006;
-        public static final int feed_item_profile_name=0x7f050007;
-        public static final int feed_item_profile_pic=0x7f050005;
-        public static final int feed_item_status_pad_left_right=0x7f050009;
-        public static final int feed_item_status_pad_top=0x7f05000a;
-        public static final int feed_item_timestamp=0x7f050008;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
+        public static final int diary_corner_radius=0x7f06000d;
+        public static final int feed_item_border_width=0x7f06000c;
+        public static final int feed_item_corner_radius=0x7f06000b;
+        public static final int feed_item_margin=0x7f060002;
+        public static final int feed_item_padding_left_right=0x7f060004;
+        public static final int feed_item_padding_top_bottom=0x7f060003;
+        public static final int feed_item_profile_info_padd=0x7f060006;
+        public static final int feed_item_profile_name=0x7f060007;
+        public static final int feed_item_profile_pic=0x7f060005;
+        public static final int feed_item_status_pad_left_right=0x7f060009;
+        public static final int feed_item_status_pad_top=0x7f06000a;
+        public static final int feed_item_timestamp=0x7f060008;
     }
     public static final class drawable {
         public static final int baby_height=0x7f020000;
@@ -46,93 +52,129 @@ public final class R {
         public static final int bg_round_coner=0x7f020002;
         public static final int birthday=0x7f020003;
         public static final int diary_128x128=0x7f020004;
-        public static final int female=0x7f020005;
-        public static final int food_128x128=0x7f020006;
-        public static final int growth_128x128=0x7f020007;
-        public static final int ic_launcher=0x7f020008;
-        public static final int mypage_128x128=0x7f020009;
-        public static final int navi_setting_btn=0x7f02000a;
-        public static final int navi_toggle_btn=0x7f02000b;
-        public static final int navi_write_btn=0x7f02000c;
-        public static final int next_arrow=0x7f02000d;
-        public static final int photo_sample=0x7f02000e;
-        public static final int porter_since=0x7f02000f;
-        public static final int prev_arrow=0x7f020010;
-        public static final int setting_128x128=0x7f020011;
-        public static final int smartbebe_icon_512x512=0x7f020012;
-        public static final int smartbebe_logo=0x7f020013;
-        public static final int smartbebe_logo_128x128=0x7f020014;
-        public static final int vaccine_128x128=0x7f020015;
+        public static final int diary_height_disable_128x128=0x7f020005;
+        public static final int diary_height_normal_128x128=0x7f020006;
+        public static final int diary_height_pressed_128x128=0x7f020007;
+        public static final int diary_location_disable_128x128=0x7f020008;
+        public static final int diary_location_normal_128x128=0x7f020009;
+        public static final int diary_location_pressed_128x128=0x7f02000a;
+        public static final int diary_vaccine_disable_128x128=0x7f02000b;
+        public static final int diary_vaccine_normal_128x128=0x7f02000c;
+        public static final int diary_vaccine_pressed_128x128=0x7f02000d;
+        public static final int diary_weight_disable_128x128=0x7f02000e;
+        public static final int diary_weight_normal_128x128=0x7f02000f;
+        public static final int diary_weight_pressed_128x128=0x7f020010;
+        public static final int female=0x7f020011;
+        public static final int food_128x128=0x7f020012;
+        public static final int growth_128x128=0x7f020013;
+        public static final int ic_launcher=0x7f020014;
+        public static final int mypage_128x128=0x7f020015;
+        public static final int navi_setting_btn=0x7f020016;
+        public static final int navi_toggle_btn=0x7f020017;
+        public static final int navi_write_btn=0x7f020018;
+        public static final int next_arrow=0x7f020019;
+        public static final int photo_sample=0x7f02001a;
+        public static final int porter_since=0x7f02001b;
+        public static final int prev_arrow=0x7f02001c;
+        public static final int setting_128x128=0x7f02001d;
+        public static final int smartbebe_icon_512x512=0x7f02001e;
+        public static final int smartbebe_logo=0x7f02001f;
+        public static final int smartbebe_logo_128x128=0x7f020020;
+        public static final int vaccine_128x128=0x7f020021;
     }
     public static final class id {
-        public static final int action_settings=0x7f090028;
-        public static final int birthday_image=0x7f090022;
-        public static final int birthday_text=0x7f090023;
-        public static final int calendar_view_btn=0x7f09001b;
-        public static final int detail_scrollview=0x7f09001c;
-        public static final int diary_btn_linearlayout=0x7f090019;
-        public static final int diary_content_text=0x7f090010;
-        public static final int diary_height_btn=0x7f090014;
-        public static final int diary_linearImage=0x7f090011;
-        public static final int diary_listview=0x7f090018;
-        public static final int diary_location_btn=0x7f090012;
-        public static final int diary_time_text=0x7f09000f;
-        public static final int diary_title_text=0x7f09000e;
-        public static final int diary_vaccine_btn=0x7f090013;
-        public static final int diary_view_btn=0x7f09001a;
-        public static final int diary_weight_btn=0x7f090015;
-        public static final int drawer_layout=0x7f090000;
-        public static final int height_image=0x7f090024;
-        public static final int height_text=0x7f090025;
-        public static final int home_change_next_btn=0x7f09001f;
-        public static final int home_change_prev_btn=0x7f09001d;
-        public static final int home_gender_image=0x7f090021;
-        public static final int home_name_textview=0x7f090020;
-        public static final int home_photo_add_btn=0x7f09001e;
-        public static final int imageView1=0x7f09000c;
-        public static final int imageView2=0x7f09000d;
-        public static final int linearContainer=0x7f090001;
-        public static final int mainview_linear=0x7f090006;
-        public static final int navi_bebe_btn=0x7f090004;
-        public static final int navi_email_btn=0x7f090009;
-        public static final int navi_linearlayout=0x7f090007;
-        public static final int navi_menu_btn_image=0x7f090016;
-        public static final int navi_menu_btn_text=0x7f090017;
-        public static final int navi_menulist1=0x7f09000a;
-        public static final int navi_menulist2=0x7f09000b;
-        public static final int navi_name_image=0x7f090008;
-        public static final int navi_toggle_btn=0x7f090003;
-        public static final int navi_write_btn=0x7f090005;
-        public static final int title_relative=0x7f090002;
-        public static final int weight_image=0x7f090026;
-        public static final int weight_text=0x7f090027;
+        public static final int RdbGp=0x7f0a000f;
+        public static final int action_settings=0x7f0a0036;
+        public static final int birthday_image=0x7f0a0030;
+        public static final int birthday_text=0x7f0a0031;
+        public static final int calGrid=0x7f0a0017;
+        public static final int calendar_view_btn=0x7f0a0029;
+        public static final int detail_scrollview=0x7f0a002a;
+        public static final int diary_btn_linearlayout=0x7f0a0027;
+        public static final int diary_content_text=0x7f0a001a;
+        public static final int diary_height_btn=0x7f0a001e;
+        public static final int diary_linearImage=0x7f0a001b;
+        public static final int diary_listview=0x7f0a0026;
+        public static final int diary_location_btn=0x7f0a001c;
+        public static final int diary_time_text=0x7f0a0019;
+        public static final int diary_title_text=0x7f0a0018;
+        public static final int diary_vaccine_btn=0x7f0a001d;
+        public static final int diary_view_btn=0x7f0a0028;
+        public static final int diary_weight_btn=0x7f0a001f;
+        public static final int displayCalendar=0x7f0a0023;
+        public static final int displayDate=0x7f0a0022;
+        public static final int drawer_layout=0x7f0a0000;
+        public static final int height_image=0x7f0a0032;
+        public static final int height_text=0x7f0a0033;
+        public static final int home_change_next_btn=0x7f0a002d;
+        public static final int home_change_prev_btn=0x7f0a002b;
+        public static final int home_gender_image=0x7f0a002f;
+        public static final int home_name_textview=0x7f0a002e;
+        public static final int home_photo_add_btn=0x7f0a002c;
+        public static final int imageView1=0x7f0a0012;
+        public static final int imageView2=0x7f0a0013;
+        public static final int linearContainer=0x7f0a0001;
+        public static final int maintext=0x7f0a0015;
+        public static final int mainview_linear=0x7f0a0006;
+        public static final int navi_bebe_btn=0x7f0a0004;
+        public static final int navi_email_btn=0x7f0a0009;
+        public static final int navi_linearlayout=0x7f0a0007;
+        public static final int navi_menu_btn_image=0x7f0a0024;
+        public static final int navi_menu_btn_text=0x7f0a0025;
+        public static final int navi_menulist1=0x7f0a000a;
+        public static final int navi_menulist2=0x7f0a000b;
+        public static final int navi_name_image=0x7f0a0008;
+        public static final int navi_toggle_btn=0x7f0a0003;
+        public static final int navi_write_btn=0x7f0a0005;
+        public static final int next=0x7f0a0016;
+        public static final int prev=0x7f0a0014;
+        public static final int rdb1=0x7f0a0010;
+        public static final int rdb2=0x7f0a0011;
+        public static final int saveBtn=0x7f0a0021;
+        public static final int spinner=0x7f0a000c;
+        public static final int spinner1=0x7f0a000d;
+        public static final int spinner2=0x7f0a000e;
+        public static final int titleEdit=0x7f0a0020;
+        public static final int title_relative=0x7f0a0002;
+        public static final int weight_image=0x7f0a0034;
+        public static final int weight_text=0x7f0a0035;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int activity_start=0x7f030001;
-        public static final int diary_listitem=0x7f030002;
-        public static final int navi_menulist_listitem=0x7f030003;
-        public static final int tab_diary=0x7f030004;
-        public static final int tab_home=0x7f030005;
+        public static final int activity_signup=0x7f030001;
+        public static final int activity_start=0x7f030002;
+        public static final int diary_calendar=0x7f030003;
+        public static final int diary_listitem=0x7f030004;
+        public static final int diary_write=0x7f030005;
+        public static final int navi_menulist_listitem=0x7f030006;
+        public static final int tab_diary=0x7f030007;
+        public static final int tab_home=0x7f030008;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int action_settings=0x7f060002;
-        public static final int app_name=0x7f060000;
-        public static final int calendar_view_string=0x7f06000d;
-        public static final int default_long_string=0x7f060004;
-        public static final int default_string=0x7f060003;
-        public static final int diary_view_string=0x7f06000c;
-        public static final int hello_world=0x7f060001;
-        public static final int menu_babyfood=0x7f060008;
-        public static final int menu_diary=0x7f060006;
-        public static final int menu_growth=0x7f060009;
-        public static final int menu_mypage=0x7f06000a;
-        public static final int menu_setting=0x7f06000b;
-        public static final int menu_vaccine=0x7f060007;
-        public static final int sample_name=0x7f060005;
+        public static final int action_settings=0x7f070002;
+        public static final int app_name=0x7f070000;
+        public static final int calendar_view_string=0x7f070014;
+        public static final int default_long_string=0x7f070004;
+        public static final int default_string=0x7f070003;
+        public static final int diary_view_string=0x7f070013;
+        public static final int gender_female=0x7f07000b;
+        public static final int gender_male=0x7f07000c;
+        public static final int hello_world=0x7f070001;
+        public static final int menu_babyfood=0x7f07000f;
+        public static final int menu_diary=0x7f07000d;
+        public static final int menu_growth=0x7f070010;
+        public static final int menu_mypage=0x7f070011;
+        public static final int menu_setting=0x7f070012;
+        public static final int menu_vaccine=0x7f07000e;
+        public static final int sample_name=0x7f070005;
+        public static final int signup_age=0x7f070007;
+        public static final int signup_gender=0x7f070008;
+        public static final int signup_height=0x7f070009;
+        public static final int signup_name=0x7f070006;
+        public static final int signup_weight=0x7f07000a;
     }
     public static final class style {
         /** 
@@ -156,10 +198,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
+        public static final int AppTheme=0x7f080001;
     }
 }

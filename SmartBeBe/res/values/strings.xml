@@ -10,6 +10,14 @@ About 10 members of the Fighters for Free North Korea released 10 large helium-f
 In response, the DPRK, the abbreviation for North Korea’s official name, the Democratic People’s Republic of Korea, routinely threatens to attack the launch sites. But last week Pyongyang ramped up pressure on Seoul to stop activists from floating propaganda leaflets, claiming that such activity was tantamount to “a graver provocation than military force.”</string>
     
     <string name="sample_name">추사랑</string>
+    
+    <string name="signup_name">이름:</string>
+    <string name="signup_age">생년월일:</string>
+    <string name="signup_gender">성별:</string>
+    <string name="signup_height">키:</string>
+    <string name="signup_weight">몸무게:</string>
+    <string name="gender_female">여자</string>
+    <string name="gender_male">남자</string>
 
     <string name="menu_diary">다이어리</string>
     <string name="menu_vaccine">예방접종</string>
