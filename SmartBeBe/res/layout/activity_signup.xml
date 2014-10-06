@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dip"
+    android:background="#FFFFB3" >
+    
+    <LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="vertical"
+	    android:padding="7dip" >
+	
+	    <ImageButton
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:layout_marginTop="20dip"
+	        android:layout_marginBottom="40dip"
+	        android:src="@drawable/smartbebe_icon_512x512"
+	        android:background="@null" />
+	
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	       
+	        <TextView
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="3"
+	            android:layout_marginRight="8dip"
+	            android:layout_gravity="center"
+	            android:text="@string/signup_name"
+	            android:textColor="#000000"
+	            android:textSize="20sp" />
+	
+	        <EditText
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_weight="1"
+	            android:singleLine="true"
+	            android:hint="이름" />
+	    </LinearLayout>
+	     
+	    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal">
+	        
+	     	<TextView
+	      	 	android:layout_width="match_parent"
+	       	 	android:layout_height="wrap_content"
+	       	 	android:layout_weight="3"
+	            android:layout_gravity="center"
+	        	android:layout_marginRight="8dip"
+	        	android:text="@string/signup_age"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />
+	     
+		    	 <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_weight="1"
+		        android:orientation="horizontal" >
+	
+					 <EditText
+		    			android:id="@+id/spinner"
+		    			android:layout_width="80dip"
+		    			android:layout_height="wrap_content"/>
+		     
+		  			<TextView
+			        	android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:text="년"
+			        	android:textColor="#000000"
+			        	android:textSize="20sp" />
+		
+		 			 <EditText
+		   		 		android:id="@+id/spinner1"
+		    			android:layout_width="50dip"
+		    			android:layout_height="wrap_content"/>
+		  
+		    		<TextView
+			        	android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:text="월"
+			        	android:textColor="#000000"
+			        	android:textSize="20sp" />
+		    
+		    		<EditText
+		    			android:id="@+id/spinner2"
+		    			android:layout_width="50dip"
+		    			android:layout_height="wrap_content"/>
+		     
+		  			<TextView
+			        	android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:layout_marginRight="8dip"
+			        	android:text="일"
+			        	android:textColor="#000000"
+			        	android:textSize="20sp" />	
+		    </LinearLayout>
+	    
+		</LinearLayout>
+	        
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	    
+	    	<TextView
+	        	android:layout_width="80dip"
+	       	 	android:layout_height="wrap_content"
+	        	android:layout_marginRight="8dip"
+	            android:layout_gravity="center"
+	        	android:text="@string/signup_gender"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />
+		
+	       <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+		        
+		        <RadioGroup 
+		            android:id="@+id/RdbGp"
+			        android:layout_width="fill_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="horizontal">
+			        
+			        <RadioButton android:id="@+id/rdb1"
+			            android:layout_width="80dip"
+			            android:layout_height="30dip"
+			            android:textColor="#000000"
+			        	android:textSize="20sp"
+			            android:text="@string/gender_female"/>
+			        
+			        <RadioButton android:id="@+id/rdb2"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:textColor="#000000"
+			        	android:textSize="20sp"
+			            android:text="@string/gender_male"/>
+		        </RadioGroup>
+		    </LinearLayout>
+		</LinearLayout>
+	
+	  	<LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	        
+	    	<TextView
+	        	android:layout_width="80dip"
+	        	android:layout_height="wrap_content"
+	        	android:layout_marginRight="8dip"
+	        	android:text="@string/signup_height"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />
+	     
+	    	<EditText
+	        	android:layout_width="210dip"
+	        	android:layout_height="wrap_content"
+	        	android:hint="키 (cm)"
+	        	android:singleLine="true" />
+	    
+	    	<TextView
+	        	android:layout_width="40dip"
+	        	android:layout_height="wrap_content"
+	        	android:text="cm"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />   
+	    </LinearLayout>
+	    
+	    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+	
+	    	<TextView
+	        	android:layout_width="80dip"
+	        	android:layout_height="wrap_content"
+	        	android:layout_marginRight="8dip"
+	        	android:text="@string/signup_weight"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />
+	
+	    	<EditText
+	        	android:layout_width="210dip"
+	        	android:layout_height="wrap_content"
+	        	android:hint="몸무게 (kg)"
+	        	android:singleLine="true" />
+	    
+	    	<TextView
+	        	android:layout_width="40dip"
+	        	android:layout_height="wrap_content"
+	        	android:text="kg"
+	        	android:textColor="#000000"
+	        	android:textSize="20sp" />
+	     </LinearLayout>
+	    
+	    <LinearLayout
+	       android:layout_width="match_parent"
+	       android:layout_height="match_parent"
+	       android:orientation="horizontal"
+	       android:gravity="right"
+	       android:layout_marginTop="10dip">
+	    
+		    <Button 
+		        android:layout_width="80dip"
+		        android:layout_height="wrap_content"
+		        android:text="완료"    />
+		    
+		    <Button
+		        android:layout_width="80dip"
+		        android:layout_height="wrap_content"
+		        android:text="추가 등록"/>
+		</LinearLayout>
+	</LinearLayout>
+</ScrollView>
+	
