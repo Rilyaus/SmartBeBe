@@ -13,6 +13,7 @@
 	    android:padding="7dip" >
 	
 	    <ImageButton
+	        android:id="@+id/baby_picture_btn"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
@@ -34,12 +35,14 @@
 	            android:layout_gravity="center"
 	            android:text="@string/signup_name"
 	            android:textColor="#000000"
-	            android:textSize="20sp" />
+	            android:textSize="15sp" />
 	
 	        <EditText
+	            android:id="@+id/baby_name_EditText"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
 	            android:layout_weight="1"
+	            android:textSize="15sp"
 	            android:singleLine="true"
 	            android:hint="이름" />
 	    </LinearLayout>
@@ -58,50 +61,55 @@
 	        	android:layout_marginRight="8dip"
 	        	android:text="@string/signup_age"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />
+	        	android:textSize="15sp" />
 	     
-		    	 <LinearLayout
+	    	 <LinearLayout
 		        android:layout_width="match_parent"
 		        android:layout_height="wrap_content"
 		        android:layout_weight="1"
 		        android:orientation="horizontal" >
+
+				 <EditText
+	    			android:id="@+id/baby_year_EditText"
+	    			android:layout_width="70dip"
+	    			android:layout_height="wrap_content"
+	    			android:textSize="15sp" />
+	     
+	  			<TextView
+		        	android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+		        	android:text="년"
+		        	android:layout_marginRight="10dip"
+		        	android:textColor="#000000"
+	    			android:textSize="15sp" />
 	
-					 <EditText
-		    			android:id="@+id/spinner"
-		    			android:layout_width="80dip"
-		    			android:layout_height="wrap_content"/>
-		     
-		  			<TextView
-			        	android:layout_width="wrap_content"
-			        	android:layout_height="wrap_content"
-			        	android:text="년"
-			        	android:textColor="#000000"
-			        	android:textSize="20sp" />
-		
-		 			 <EditText
-		   		 		android:id="@+id/spinner1"
-		    			android:layout_width="50dip"
-		    			android:layout_height="wrap_content"/>
-		  
-		    		<TextView
-			        	android:layout_width="wrap_content"
-			        	android:layout_height="wrap_content"
-			        	android:text="월"
-			        	android:textColor="#000000"
-			        	android:textSize="20sp" />
-		    
-		    		<EditText
-		    			android:id="@+id/spinner2"
-		    			android:layout_width="50dip"
-		    			android:layout_height="wrap_content"/>
-		     
-		  			<TextView
-			        	android:layout_width="wrap_content"
-			        	android:layout_height="wrap_content"
-			        	android:layout_marginRight="8dip"
-			        	android:text="일"
-			        	android:textColor="#000000"
-			        	android:textSize="20sp" />	
+	 			 <EditText
+	   		 		android:id="@+id/baby_month_EditText"
+	    			android:layout_width="50dip"
+	    			android:layout_height="wrap_content"
+	    			android:textSize="15sp" />
+	  
+	    		<TextView
+		        	android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+		        	android:text="월"
+		        	android:layout_marginRight="10dip"
+		        	android:textColor="#000000"
+	    			android:textSize="15sp" />
+	    
+	    		<EditText
+	    			android:id="@+id/baby_day_EditText"
+	    			android:layout_width="50dip"
+	    			android:layout_height="wrap_content"
+	    			android:textSize="15sp" />
+	     
+	  			<TextView
+		        	android:layout_width="wrap_content"
+		        	android:layout_height="wrap_content"
+		        	android:layout_marginRight="8dip"
+		        	android:text="일"
+		        	android:textColor="#000000"
+	    			android:textSize="15sp" />	
 		    </LinearLayout>
 	    
 		</LinearLayout>
@@ -118,32 +126,33 @@
 	            android:layout_gravity="center"
 	        	android:text="@string/signup_gender"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />
+    			android:textSize="15sp" />
 		
 	       <LinearLayout
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:orientation="horizontal" >
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="horizontal" >
 		        
 		        <RadioGroup 
-		            android:id="@+id/RdbGp"
-			        android:layout_width="fill_parent"
+		            android:id="@+id/baby_gender_Radio"
+			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-			        android:orientation="horizontal">
+			        android:orientation="horizontal"
+	    			android:textSize="15sp" >
 			        
-			        <RadioButton android:id="@+id/rdb1"
-			            android:layout_width="80dip"
-			            android:layout_height="30dip"
-			            android:textColor="#000000"
-			        	android:textSize="20sp"
-			            android:text="@string/gender_female"/>
-			        
-			        <RadioButton android:id="@+id/rdb2"
+			        <RadioButton android:id="@+id/baby_male_Radio"
 			            android:layout_width="wrap_content"
 			            android:layout_height="wrap_content"
 			            android:textColor="#000000"
-			        	android:textSize="20sp"
+	    				android:textSize="15sp" 
 			            android:text="@string/gender_male"/>
+			        
+			        <RadioButton android:id="@+id/baby_female_Radio"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:textColor="#000000"
+	    				android:textSize="15sp" 
+			            android:text="@string/gender_female"/>
 		        </RadioGroup>
 		    </LinearLayout>
 		</LinearLayout>
@@ -159,20 +168,22 @@
 	        	android:layout_marginRight="8dip"
 	        	android:text="@string/signup_height"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />
+    			android:textSize="15sp" />
 	     
 	    	<EditText
+	    	    android:id="@+id/baby_height_EditText"
 	        	android:layout_width="210dip"
 	        	android:layout_height="wrap_content"
 	        	android:hint="키 (cm)"
-	        	android:singleLine="true" />
+	        	android:singleLine="true"
+    			android:textSize="15sp" />
 	    
 	    	<TextView
 	        	android:layout_width="40dip"
 	        	android:layout_height="wrap_content"
 	        	android:text="cm"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />   
+    			android:textSize="15sp" />   
 	    </LinearLayout>
 	    
 	    
@@ -187,20 +198,22 @@
 	        	android:layout_marginRight="8dip"
 	        	android:text="@string/signup_weight"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />
+    			android:textSize="15sp" />
 	
 	    	<EditText
+	    	    android:id="@+id/baby_weight_EditText"
 	        	android:layout_width="210dip"
 	        	android:layout_height="wrap_content"
 	        	android:hint="몸무게 (kg)"
-	        	android:singleLine="true" />
+	        	android:singleLine="true"
+    			android:textSize="15sp" />
 	    
 	    	<TextView
 	        	android:layout_width="40dip"
 	        	android:layout_height="wrap_content"
 	        	android:text="kg"
 	        	android:textColor="#000000"
-	        	android:textSize="20sp" />
+    			android:textSize="15sp" />
 	     </LinearLayout>
 	    
 	    <LinearLayout
@@ -211,14 +224,18 @@
 	       android:layout_marginTop="10dip">
 	    
 		    <Button 
-		        android:layout_width="80dip"
+		        android:id="@+id/baby_signup_btn"
+		        android:layout_width="65dip"
 		        android:layout_height="wrap_content"
-		        android:text="완료"    />
+		        android:text="완료"
+    			android:textSize="12sp" />
 		    
 		    <Button
-		        android:layout_width="80dip"
+		        android:id="@+id/baby_add_btn"
 		        android:layout_height="wrap_content"
-		        android:text="추가 등록"/>
+		        android:layout_width="wrap_content"
+		        android:text="추가 등록"
+    			android:textSize="12sp" />
 		</LinearLayout>
 	</LinearLayout>
 </ScrollView>

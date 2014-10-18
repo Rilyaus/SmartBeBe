@@ -1,7 +1,9 @@
-package com.kw.smartbebe;
+package com.smartbebe.diary;
 
 import java.text.NumberFormat;
 import java.util.ArrayList;
+
+import com.kw.smartbebe.R;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -62,7 +64,7 @@ class DiaryContentAdapter extends BaseAdapter implements OnTouchListener {
 
 	@Override
 	public Object getItem(int position) {
-		return pArr.get(position).pHeight;
+		return pArr.get(position);
 	}
 
 	@Override
@@ -90,24 +92,29 @@ class DiaryContentAdapter extends BaseAdapter implements OnTouchListener {
 		content.setText(pArr.get(position).pContent);
 
 		ImageButton location = (ImageButton)convertView.findViewById(R.id.diary_location_btn);
-		location.setOnTouchListener(this);
 		if(pArr.get(position).pLocation.equals(""))
 			location.setBackgroundResource(R.drawable.diary_location_disable_128x128);
+		else
+			location.setOnTouchListener(this);
+			
 		
 		ImageButton vaccine = (ImageButton)convertView.findViewById(R.id.diary_vaccine_btn);
-		vaccine.setOnTouchListener(this);
 		if(pArr.get(position).pVaccine.equals(""))
 			vaccine.setBackgroundResource(R.drawable.diary_vaccine_disable_128x128);
+		else
+			vaccine.setOnTouchListener(this);
 		
 		ImageButton height = (ImageButton)convertView.findViewById(R.id.diary_height_btn);
-		height.setOnTouchListener(this);
 		if( !(pArr.get(position).pHeight > 0) )
 			height.setBackgroundResource(R.drawable.diary_height_disable_128x128);
+		else
+			height.setOnTouchListener(this);
 		
 		ImageButton weight = (ImageButton)convertView.findViewById(R.id.diary_weight_btn);
-		weight.setOnTouchListener(this);
 		if( !(pArr.get(position).pWeight > 0) )
 			weight.setBackgroundResource(R.drawable.diary_weight_disable_128x128);
+		else
+			weight.setOnTouchListener(this);
 		
 		return convertView;
 	}

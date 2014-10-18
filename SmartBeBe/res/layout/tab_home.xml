@@ -67,7 +67,7 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_toRightOf="@+id/home_name_textview"
-		        android:background="@drawable/female" />
+		        android:src="@drawable/female_128x128" />
 	    </LinearLayout>
 	    
 	    <View
@@ -106,7 +106,7 @@
 		                android:background="@drawable/birthday" />
 		            
 		            <TextView
-		                android:id="@+id/birthday_text"
+		                android:id="@+id/home_birthday_text"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_toRightOf="@+id/birthday_image"
@@ -148,7 +148,7 @@
 		                android:background="@drawable/baby_height" />
 		            
 		            <TextView
-		                android:id="@+id/height_text"
+		                android:id="@+id/home_height_text"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_toRightOf="@+id/height_image"
@@ -190,7 +190,7 @@
 		                android:background="@drawable/baby_weight" />
 		            
 		            <TextView
-		                android:id="@+id/weight_text"
+		                android:id="@+id/home_weight_text"
 		                android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:layout_toRightOf="@+id/weight_image"

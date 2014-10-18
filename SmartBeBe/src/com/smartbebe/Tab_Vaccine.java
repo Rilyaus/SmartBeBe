@@ -1,4 +1,6 @@
-package com.kw.smartbebe;
+package com.smartbebe;
+
+import com.kw.smartbebe.R;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

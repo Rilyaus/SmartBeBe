@@ -1,6 +1,9 @@
-package com.kw.smartbebe;
+package com.smartbebe;
 
 import java.util.ArrayList;
+
+import com.kw.smartbebe.R;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;

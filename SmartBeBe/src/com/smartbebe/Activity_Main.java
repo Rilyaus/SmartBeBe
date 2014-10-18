@@ -1,10 +1,20 @@
-package com.kw.smartbebe;
+package com.smartbebe;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
+import com.kw.smartbebe.R;
+import com.kw.smartbebe.R.id;
+import com.smartbebe.def.SmartBebeDBOpenHelper;
+import com.smartbebe.def.SmartBebeDataBase;
+import com.smartbebe.def.SmartBebePreference;
+import com.smartbebe.diary.Activity_DiaryWrite;
+import com.smartbebe.diary.Tab_Diary;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,13 +27,15 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class MainActivity extends FragmentActivity implements OnClickListener {
+public class Activity_Main extends FragmentActivity implements OnClickListener {
 	private DrawerLayout dlDrawer;
 	private LinearLayout navi_lineaLayout;
 	private ListView navi_listview1, navi_listview2;
-	private Button navi_toggle_btn;
+	private Button navi_toggle_btn, navi_write_btn, navi_bebe_btn;
 	private ArrayList<Navigation_MenuList> naviMenuArr1, naviMenuArr2;
 	private NaviMenuListAdapter nAdapter1, nAdapter2;
+	private SmartBebeDBOpenHelper mDbOpenHelper;
+	private Cursor mCursor;
 	
 	public static Stack<Fragment> homeStack = new Stack<Fragment>();
 	
@@ -31,8 +43,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		dlDrawer = (DrawerLayout)findViewById(R.id.drawer_layout);
 		navi_toggle_btn = (Button)findViewById(R.id.navi_toggle_btn);
+		navi_bebe_btn = (Button)findViewById(R.id.navi_bebe_btn);
+		navi_write_btn = (Button)findViewById(R.id.navi_write_btn);
 		navi_lineaLayout = (LinearLayout)findViewById(R.id.navi_linearlayout);
 		navi_listview1 = (ListView)findViewById(R.id.navi_menulist1);
 		navi_listview2 = (ListView)findViewById(R.id.navi_menulist2);
@@ -47,14 +62,27 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		
 		setHomeTab();
 		setNaviMenu();
-		
+
 		navi_toggle_btn.setOnClickListener(this);
+		navi_write_btn.setOnClickListener(this);
+		navi_bebe_btn.setOnClickListener(this);
 	}
 	
 	public void onClick(View v) {
 		switch(v.getId()) {
 		case R.id.navi_toggle_btn :
 			dlDrawer.openDrawer(navi_lineaLayout);
+			break;
+		case R.id.navi_write_btn :
+			startActivity(new Intent(Activity_Main.this, Activity_DiaryWrite.class));
+			break;
+		case R.id.navi_bebe_btn :
+			homeStack.clear();
+
+			Fragment fa = getSupportFragmentManager().findFragmentById(R.id.mainview_linear);
+			
+			if( !fa.getTag().equals("Home") ) 
+				setHomeTab();
 			break;
 		}
 	}
@@ -75,7 +103,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_babyfood), getResources().getDrawable(R.drawable.food_128x128)));
 		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_growth), getResources().getDrawable(R.drawable.growth_128x128)));
 
-		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_mypage), getResources().getDrawable(R.drawable.mypage_128x128)));
+		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_baby_add), getResources().getDrawable(R.drawable.mypage_128x128)));
 		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_setting), getResources().getDrawable(R.drawable.setting_128x128)));
 
 		nAdapter1 = new NaviMenuListAdapter(this, R.layout.navi_menulist_listitem, naviMenuArr1);
@@ -107,6 +135,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 		navi_listview2.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> av, View v, int position, long id) {
 				dlDrawer.closeDrawer(navi_lineaLayout);
+				
+				if( (int) id == 0 ) {
+					startActivity(new Intent(Activity_Main.this, Activity_Signup.class));
+				}
 			}
 		});
 	}
@@ -120,7 +152,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
 				getSupportFragmentManager().popBackStack();
 			}
 			else {
-				new AlertDialog.Builder(MainActivity.this).setTitle("SmartBeBe")
+				new AlertDialog.Builder(Activity_Main.this).setTitle("SmartBeBe")
 				.setMessage("앱을 종료하시겠습니까?").setNegativeButton("아니오", null)
 				.setPositiveButton("예", new DialogInterface.OnClickListener() {
 					public void onClick(DialogInterface dialog, int whichButton) {
