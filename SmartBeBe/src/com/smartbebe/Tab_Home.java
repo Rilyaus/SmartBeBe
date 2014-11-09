@@ -1,5 +1,6 @@
 package com.smartbebe;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -9,6 +10,7 @@ import com.smartbebe.def.SmartBebeDBOpenHelper;
 import com.smartbebe.def.SmartBebeDataBase;
 import com.smartbebe.def.SmartBebePreference;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -21,6 +23,8 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 
 public class Tab_Home extends Fragment implements OnClickListener {
+	private BabyChange babyChangeListener;
+	
 	private TextView name, day, height, weight;
 	private ImageView gender, picture;
 	private ImageButton prev, next;
@@ -47,7 +51,13 @@ public class Tab_Home extends Fragment implements OnClickListener {
 		
 		mDbOpenHelper = new SmartBebeDBOpenHelper(getActivity());
 		mDbOpenHelper.open();
-		mCursor = mDbOpenHelper.getAllColumns(SmartBebeDataBase.CreateDB._TABLE_BABY_INFO);
+		
+	//	if( SmartBebePreference.CURRENT_BABY_ID == -1 )
+			mCursor = mDbOpenHelper.getAllColumns(SmartBebeDataBase.CreateDB._TABLE_BABY_INFO);
+	//	else
+	//		mCursor = mDbOpenHelper.getMatchAttr(SmartBebeDataBase.CreateDB._TABLE_BABY_INFO,
+	//				SmartBebeDataBase.CreateDB.BABY_ID,
+	//				String.valueOf(SmartBebePreference.CURRENT_BABY_ID));
 		
 		setBabyInfo("init");
 		
@@ -65,6 +75,10 @@ public class Tab_Home extends Fragment implements OnClickListener {
 		}
 	}
 	
+	public interface BabyChange {
+		public void babyChange(String id, String name, String birthday);
+	}
+	
 	private void setBabyInfo(String way) {
 		if( way == "init")
 			mCursor.moveToFirst();
@@ -78,7 +92,11 @@ public class Tab_Home extends Fragment implements OnClickListener {
 				mCursor.moveToLast();
 			else mCursor.moveToPrevious();
 		}
-		SmartBebePreference.CURRENT_BABY_ID = mCursor.getInt(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_ID));
+		
+		babyChangeListener.babyChange(
+				mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_ID)),
+				mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_NAME)),
+				mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_BIRTHDAY)));
 		
 		try {
 			SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMdd");
@@ -99,5 +117,10 @@ public class Tab_Home extends Fragment implements OnClickListener {
 		day.setText(birthday);
 		height.setText(mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_HEIGHT)) + "cm");
 		weight.setText(mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.BABY_WEIGHT)) + "kg");
+	}
+
+	public void onAttach(Activity activity) {
+		super.onAttach(activity);
+		babyChangeListener = (BabyChange)activity;
 	}
 }

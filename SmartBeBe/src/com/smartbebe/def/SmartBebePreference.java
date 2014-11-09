@@ -7,8 +7,11 @@ import android.content.SharedPreferences;
 public class SmartBebePreference {
 	static Context mContext;
 	private final String PREFERENCE_NAME = "smartbebe.pref"; 
+	public static String DOCUMENT_LOAD_STRING = "DOCUMENT_LOAD";
 	
-	public static int CURRENT_BABY_ID = 0;
+	public static int CURRENT_BABY_ID = -1;
+	public static String CURRENT_BABY_BIRTHDAY = "";
+	public static String CURRENT_BABY_NAME = "";
 
 	public SmartBebePreference(Context context) {
 		mContext = context;

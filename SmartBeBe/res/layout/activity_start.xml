@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="8dip"
-    android:background="#fff2cc" >
+    android:background="#ffffff" >
 
     <LinearLayout 
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
 	        android:id="@+id/imageView2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
-	        android:src="@drawable/porter_since" />
+	        android:src="@drawable/smartbebe_since" />
         
         </LinearLayout>
     

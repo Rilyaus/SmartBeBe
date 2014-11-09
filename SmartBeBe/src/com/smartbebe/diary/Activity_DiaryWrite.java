@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.text.InputType;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,7 +24,8 @@ import android.widget.Toast;
 public class Activity_DiaryWrite extends Activity implements OnClickListener, OnTouchListener {
 	final int REQUEST_DAY_INFO = 1000;
 	
-	private String write_day;
+	private String write_day = "", location_info = "";
+	private float height_info = 0, weight_info = 0;
 	private ImageButton calendar_btn;
 	private Button cancel_btn, complete_btn;
 	private EditText day_editText, content_editText, title_editText;
@@ -35,7 +37,7 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.diary_write);
-	    
+
 	    mDbOpenHelper = new SmartBebeDBOpenHelper(this);
 	    mDbOpenHelper.open();
 
@@ -61,6 +63,75 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 	    cancel_btn.setOnClickListener(this);
 	    complete_btn.setOnClickListener(this);
 	    calendar_btn.setOnClickListener(this);
+	    
+	    OnClickListener subInfoClick = new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				View innerView = getLayoutInflater().inflate(R.layout.diary_subinfo, null);
+				final EditText subinfo_editText = (EditText)innerView.findViewById(R.id.diary_subinfo_editText);
+				AlertDialog.Builder ad = new AlertDialog.Builder(Activity_DiaryWrite.this);
+				
+				switch(v.getId()) {
+				case R.id.diary_write_location_btn :
+					subinfo_editText.setInputType(InputType.TYPE_CLASS_TEXT);
+					subinfo_editText.setText(location_info);
+					ad.setTitle("Location Option");
+					ad.setView(innerView);
+					ad.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface arg0, int arg1) {
+							
+						}
+					}).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							location_info = subinfo_editText.getText().toString();
+						}
+					});
+					ad.show();
+					
+					break;
+				case R.id.diary_write_height_btn :
+					subinfo_editText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
+					subinfo_editText.setText(String.valueOf(height_info));
+					ad.setTitle("Height Option");
+					ad.setView(innerView);
+					ad.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface arg0, int arg1) {
+							
+						}
+					}).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							height_info = Float.parseFloat(subinfo_editText.getText().toString());
+						}
+					});
+					ad.show();
+					
+					break;
+				case R.id.diary_write_weight_btn :
+					subinfo_editText.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL | InputType.TYPE_CLASS_NUMBER);
+					subinfo_editText.setText(String.valueOf(weight_info));
+					ad.setTitle("Weight Option");
+					ad.setView(innerView);
+					ad.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface arg0, int arg1) {
+							
+						}
+					}).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+						public void onClick(DialogInterface dialog, int which) {
+							weight_info = Float.parseFloat(subinfo_editText.getText().toString());
+						}
+					});
+					ad.show();
+					
+					break;
+				}
+			}
+		};
+
+	    location_btn.setOnClickListener(subInfoClick);
+	    vaccine_btn.setOnClickListener(subInfoClick);
+	    height_btn.setOnClickListener(subInfoClick);
+	    weight_btn.setOnClickListener(subInfoClick);
 	}
 	
 	public void onClick(View v) {
@@ -69,6 +140,7 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 			finish();
 			break;
 		case R.id.diary_write_complete_btn :
+			Log.d("sply", write_day);
 			if( title_editText.getText().toString().equals("") )
 				Toast.makeText(getApplicationContext(), getResources().getString(R.string.diary_write_title_excp), Toast.LENGTH_LONG).show();
 			else if( day_editText.getText().toString().equals("") )
@@ -78,7 +150,7 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 			else {
 				mDbOpenHelper.insertDiary(SmartBebeDataBase.CreateDB._TABLE_DIARY_CONTENT,
 						SmartBebePreference.CURRENT_BABY_ID, title_editText.getText().toString(), write_day, content_editText.getText().toString(),
-						"", "", 102, 22);
+						location_info, "", height_info, weight_info);
 				finish();
 			}
 			break;
@@ -128,7 +200,6 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
 		if( resultCode == 1001) {
 			String week = "";
 			switch(data.getIntExtra("dayofweek", 0)) {
@@ -142,7 +213,7 @@ public class Activity_DiaryWrite extends Activity implements OnClickListener, On
 				default : week = ""; break;
 			}
 			String str = data.getStringExtra("day_info").toString() + "." + data.getStringExtra("day");
-			write_day = str.replaceAll(".", "");
+			write_day = str.replace(".", "");
 			day_editText.setText(str + week);
 		}
 	}

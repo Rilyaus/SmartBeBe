@@ -10,7 +10,7 @@
     
     <application
         android:allowBackup="true"
-        android:icon="@drawable/smartbebe_icon_512x512"
+        android:icon="@drawable/smartbebe_icon"
         android:label="@string/app_name">
         <activity
             android:name="com.smartbebe.Activity_Main"
@@ -37,6 +37,10 @@
         <activity
             android:name="com.smartbebe.diary.ViewCalendar"
             android:theme="@style/Dialog" >
+        </activity>
+        <activity
+            android:name="com.smartbebe.policy.Activity_PolicyDetail"
+            android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
     </application>
 

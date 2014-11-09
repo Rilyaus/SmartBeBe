@@ -7,7 +7,7 @@
     android:paddingLeft="7dip"
     android:paddingRight="7dip"
     android:descendantFocusability="blocksDescendants"
-    android:background="@color/feed_bg" >
+    android:background="#ffffff" >
     
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,10 +38,21 @@
 	            android:id="@+id/diary_time_text"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"
-	            android:layout_weight="3"
+	            android:layout_weight="2"
+	            android:gravity="right"
 	            android:textColor="#aaaaaa"
 	        	android:textSize="14sp"
 	            android:text="@string/default_string"/>
+	        
+	        <ImageButton
+	            android:id="@+id/diary_option_btn"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="5dip"
+	            android:layout_marginRight="8dip"
+	            android:layout_marginLeft="8dip"
+	            android:src="@drawable/diary_down_arrow"
+	            android:background="@null"/>
 	    </LinearLayout>
 	    
 	    <TextView

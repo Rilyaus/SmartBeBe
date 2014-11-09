@@ -4,6 +4,7 @@
         <ignore path="res/layout/diary_write.xml" />
     </issue>
     <issue id="RtlHardcoded">
+        <ignore path="res/layout/activity_policydeatil.xml" />
         <ignore path="res/layout/diary_write.xml" />
     </issue>
     <issue id="SimpleDateFormat">

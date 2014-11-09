@@ -175,7 +175,7 @@ class DateAdapter extends BaseAdapter implements OnClickListener{
 			else if(arrData.get(position).getDayofweek() == 7)
 				calendar_item.setTextColor(Color.BLUE);
 			else
-				calendar_item.setTextColor(Color.WHITE);
+				calendar_item.setTextColor(Color.BLACK);
 
 			calendar_item.setOnTouchListener(new OnTouchListener() {
 				@Override

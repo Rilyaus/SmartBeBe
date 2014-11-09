@@ -12,26 +12,46 @@ In response, the DPRK, the abbreviation for North Korea’s official name, the D
     <string name="sample_name">추사랑</string>
     
     
+    <string name="diary_write_title">글쓰기</string>
     <string name="diary_write_title_excp">제목을 입력해 주세요</string>
     <string name="diary_write_day_excp">날짜를 입력해 주세요</string>
     <string name="diary_write_content_excp">내용을 입력해 주세요</string>
     <string name="diary_write_cancel_warning">입력한 내용이 사라집니다.</string>
     
     
-    <string name="signup_name">이름:</string>
-    <string name="signup_age">생년월일:</string>
-    <string name="signup_gender">성별:</string>
-    <string name="signup_height">키:</string>
-    <string name="signup_weight">몸무게:</string>
+    <string name="policyDeatil_intro_text">사업소개</string>
+    <string name="policyDeatil_time_text">적용시점</string>
+    <string name="policyDeatil_target_text">지원대상</string>
+    <string name="policyDeatil_content_text">지원내용</string>
+    <string name="policyDeatil_amount_text">지원금액</string>
+    <string name="policyDeatil_request_text">신청방법</string>
+    <string name="policyDeatil_step_text">이용절차</string>
+    <string name="policyDeatil_document_text">제출서류</string>
+    <string name="policyDeatil_standard_text">기준</string>
+    
+    
+    <string name="signup_name">이름</string>
+    <string name="signup_age">생일</string>
+    <string name="signup_gender">성별</string>
+    <string name="signup_height">키</string>
+    <string name="signup_weight">몸무게</string>
     <string name="gender_female">여자</string>
     <string name="gender_male">남자</string>
 
+    
+    
+    <string name="policy_group1">보육/교육/양육</string>
+    <string name="policy_group2">영유아 건강</string>
+    <string name="policy_group3">육아</string>
+    
     
     
     <string name="menu_diary">다이어리</string>
     <string name="menu_vaccine">예방접종</string>
     <string name="menu_babyfood">이유식</string>
     <string name="menu_growth">성장 단계</string>
+    <string name="menu_policy">육아 정책</string>
+    <string name="menu_culture">문화 센터</string>
     <string name="menu_mypage">마이페이지</string>
     <string name="menu_setting">환경설정</string>
     <string name="menu_baby_add">아이등록</string>
@@ -43,7 +63,9 @@ In response, the DPRK, the abbreviation for North Korea’s official name, the D
     
     <string name="btn_text_ok">확인</string>
     <string name="btn_text_complete">완료</string>
+    <string name="btn_text_more">추가등록</string>
     <string name="btn_text_cancel">취소</string>
+    <string name="btn_text_close">닫기</string>
     <string name="btn_text_calendar">캘린더</string>
     
     

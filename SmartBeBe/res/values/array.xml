@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="policyList">
+        <item>보육/교육/양육</item>
+        <item>영유아 건강</item>
+        <item>육아</item>
+    </string-array>
+    
+    <string-array name="policy1">
+        <item>보육료 / 유아학비지원</item>
+        <item>3~5세 연령별 누리과정</item>
+        <item>장애아 보육 / 교육비 지원</item>
+        <item>다문화 가정 보육 / 교육비 지원</item>
+        <item>방과 후 보육료 지원</item>
+        <item>시간연장형 보육료 지원</item>
+        <item>가정양육수당 지원</item>
+        <item>직장어린이집 설치 및 보육수당 지급</item>
+        <item>자녀 세액 공제</item>
+    </string-array>
+    
+    <string-array name="policy2">
+        <item>선천성 대사이상 검사 및 환아관리</item>
+        <item>신생아 청각 선별검사</item>
+        <item>미숙아 / 선천성 이상아 의료비 지원</item>
+        <item>의료기관 국가예방접종 지원사업</item>
+        <item>영유아 건강검진 지원</item>
+        <item>신생아 집중치료 병사 확충</item>
+    </string-array>
+    
+    <string-array name="policy3">
+        <item>아동발달 지원</item>
+        <item>육아휴직(급여)</item>
+        <item>육아기 근로시간 단축제도</item>
+        <item>육아휴직 시 건강보험료 경감</item>
+        <item>육아휴직 등 장려금 / 대체인력채용 장려금</item>
+    </string-array>
+    
+    <string-array name="vaccineList">
+        <item>내 아이 맞춤 예방접종</item>
+        <item>전체 예방접종</item>
+    </string-array>
+    
+    <string-array name="vaccine_private">
+        <item>디프테리아, 파상풍, 백일해</item>
+        <item>폴리오</item>
+        <item>B형 헤모필루스 인플루엔자(Hib)</item>
+        <item>폐렴구균</item>
+        <item>로타바이러스</item>
+    </string-array>
+    
+    <string-array name="vaccine_all">
+        <item>결핵</item>
+        <item>B형 간염</item>
+        <item>디프테리아, 파상풍, 백일해</item>
+        <item>폴리오</item>
+        <item>B형 헤모필루스 인플루엔자(Hib)</item>
+        <item>폐렴구균</item>
+        <item>홍역, 유행성 이하선염, 풍진</item>
+        <item>수두</item>
+        <item>일본 뇌염</item>
+        <item>인플루엔자</item>
+        <item>장티푸스</item>
+        <item>로타바이러스</item>
+        <item>A형 간염</item>
+        <item>인유두종 바이러스</item>
+    </string-array>
+</resources>

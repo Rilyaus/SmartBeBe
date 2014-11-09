@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout
+        android:id="@+id/vaccine_btn_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="5dip"
+        android:orientation="horizontal" >
+        
+        <ImageButton
+	        android:id="@+id/vaccine_private_view_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@null"
+	        android:src="@drawable/vaccine_show_private_btn" />
+        
+        <ImageButton
+	        android:id="@+id/vaccine_all_view_btn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@null"
+	        android:src="@drawable/vaccine_show_all_btn" />
+    </LinearLayout>
+       
+    <ListView
+        android:id="@+id/vaccine_private_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" />
+    
+    <ListView
+        android:id="@+id/vaccine_all_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="invisible" />
+
+</LinearLayout>

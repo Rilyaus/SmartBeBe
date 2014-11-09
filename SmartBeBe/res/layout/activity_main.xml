@@ -17,7 +17,7 @@
         	android:layout_width="match_parent"
         	android:layout_height="wrap_content"
         	android:layout_gravity="center_vertical"
-        	android:background="#FFA7A7"
+        	android:background="@color/smartbebe_red"
         	android:padding="5dip" >
     	
     		<Button
@@ -61,14 +61,14 @@
         android:dividerHeight="0dp"
         android:layout_gravity="start"
         android:orientation="vertical"
-        android:background="#EDEDED" >
+        android:background="#363636" >
     	
         <RelativeLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="5dip"
             android:paddingTop="5dip"
-            android:background="#00C6ED" >
+            android:background="@color/smartbebe_red" >
     		
             <ImageView
                 android:id="@+id/navi_name_image"
@@ -78,7 +78,7 @@
                 android:background="@drawable/smartbebe_logo_128x128" />
             
             <Button
-                android:id="@+id/navi_email_btn"
+                android:id="@+id/navi_name_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="8dip"
