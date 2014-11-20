@@ -19,15 +19,24 @@ In response, the DPRK, the abbreviation for North Korea’s official name, the D
     <string name="diary_write_cancel_warning">입력한 내용이 사라집니다.</string>
     
     
-    <string name="policyDeatil_intro_text">사업소개</string>
-    <string name="policyDeatil_time_text">적용시점</string>
-    <string name="policyDeatil_target_text">지원대상</string>
-    <string name="policyDeatil_content_text">지원내용</string>
-    <string name="policyDeatil_amount_text">지원금액</string>
-    <string name="policyDeatil_request_text">신청방법</string>
-    <string name="policyDeatil_step_text">이용절차</string>
-    <string name="policyDeatil_document_text">제출서류</string>
-    <string name="policyDeatil_standard_text">기준</string>
+    <string name="policyDetail_intro_text">사업소개</string>
+    <string name="policyDetail_time_text">적용시점</string>
+    <string name="policyDetail_target_text">지원대상</string>
+    <string name="policyDetail_content_text">지원내용</string>
+    <string name="policyDetail_amount_text">지원금액</string>
+    <string name="policyDetail_request_text">신청방법</string>
+    <string name="policyDetail_step_text">이용절차</string>
+    <string name="policyDetail_document_text">제출서류</string>
+    <string name="policyDetail_standard_text">기준</string>
+    
+    
+    <string name="vaccineDetail_name_text">백신이름</string>  
+    <string name="vaccineDetail_time_text">접종시기</string>
+    <string name="vaccineDetail_content_text">상세 설명</string>  
+    <string name="vaccineDetail_channel_text">전파 경로</string>
+    <string name="vaccineDetail_sympton_text">증상</string> 
+    <string name="vaccineDetail_cure_text">치료 방법</string>
+    <string name="vaccineDetail_prevention_text">예방 방법</string>
     
     
     <string name="signup_name">이름</string>
@@ -74,9 +83,30 @@ In response, the DPRK, the abbreviation for North Korea’s official name, the D
     <string name="hint_day">날 짜</string>
     
     
+    <string name="day_sun">일</string>
+    <string name="day_mon">월</string>
+    <string name="day_tue">화</string>
+    <string name="day_wen">수</string>
+    <string name="day_thu">목</string>
+    <string name="day_fri">금</string>
+    <string name="day_sat">토</string>
+    
+    
+    <string name="write_day_sun">(일)</string>
+    <string name="write_day_mon">(월)</string>
+    <string name="write_day_tue">(화)</string>
+    <string name="write_day_wen">(수)</string>
+    <string name="write_day_thu">(목)</string>
+    <string name="write_day_fri">(금)</string>
+    <string name="write_day_sat">(토)</string>
+    
+    
     <string name="left_button">◀</string>
     <string name="right_button">▶</string>
     <string name="shoot_btn">shoot</string>
     <string name="tall_btn">tall</string>
-    <string name="weight_btn">weight</string>        
+    <string name="weight_btn">weight</string>
+    
+    
+    <string name="baby_remove_menu_text">아이 정보 삭제</string>
 </resources>

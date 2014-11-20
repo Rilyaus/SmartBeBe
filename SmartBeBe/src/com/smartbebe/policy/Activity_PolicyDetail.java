@@ -26,7 +26,7 @@ public class Activity_PolicyDetail extends Activity implements OnClickListener {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
-	    setContentView(R.layout.activity_policydeatil);
+	    setContentView(R.layout.activity_policydetail);
 	    
 	    Intent intent = getIntent();
 	    String policy_name = intent.getExtras().getString("policy_name");

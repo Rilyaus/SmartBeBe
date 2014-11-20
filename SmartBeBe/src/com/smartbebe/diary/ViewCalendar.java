@@ -110,7 +110,11 @@ public class ViewCalendar extends Activity {
 	public void setCalendarDate(int year, int month){
 		arrData = new ArrayList<CalData>();	
 		mCalToday.set(mCal.get(Calendar.YEAR), month-1, 1);
-		maintext.setText(year + "." + month);
+		
+		if( month < 10 )
+			maintext.setText(year + ".0" + month);
+		else
+			maintext.setText(year + "." + month);
    
 		int startday = mCalToday.get(Calendar.DAY_OF_WEEK);
 		if(startday != 1)
@@ -196,10 +200,12 @@ class DateAdapter extends BaseAdapter implements OnClickListener{
 		TextView tv = (TextView)v;
 		String str = tv.getText().toString();
 		
+		if( Integer.parseInt(str) < 10 )
+			str = "0" + str;
+		
 		if( str != "") {
 			intent.putExtra("day", str);
 			intent.putExtra("day_info", dayInfo);
-			intent.putExtra("dayofweek", Integer.parseInt(tv.getTag().toString()));
 			((Activity)context).setResult(RESULT_DAY_INFO, intent);
 			((Activity)context).finish();
 		}

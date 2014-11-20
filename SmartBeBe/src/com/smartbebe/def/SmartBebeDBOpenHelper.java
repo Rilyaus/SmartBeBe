@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.*;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.util.Log;
 
 public class SmartBebeDBOpenHelper {
 	public static final String DATABASE_NAME = "smartbebe.db";
@@ -26,6 +27,9 @@ public class SmartBebeDBOpenHelper {
 			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_DIARY_CONTENT);
 			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_POLICY_CONTENT);
 			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_VACCINE_CONTENT);
+			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_HEIGHT_CONTENT);
+			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_WEIGHT_CONTENT);
+			db.execSQL(SmartBebeDataBase.CreateDB._CREATE_CULTURE_CONTENT);
 		}
 
 		@Override
@@ -51,7 +55,33 @@ public class SmartBebeDBOpenHelper {
 		mDB.close();
 	}
 
-	public long insertBabyInfo(String table, String name, int gender, String day, int height, int weight) {
+	public long insertCulture(String name, String link) {
+		ContentValues value = new ContentValues();
+		value.put(SmartBebeDataBase.CreateDB.CULTURE_NAME, name);
+		value.put(SmartBebeDataBase.CreateDB.CULTURE_LINK, link);
+		
+		return mDB.insert(SmartBebeDataBase.CreateDB._TABLE_CULTURE_CONTENT, null, value);
+	}
+
+	public long insertHeight(String table, int baby, String time, float height) {
+		ContentValues value = new ContentValues();
+		value.put(SmartBebeDataBase.CreateDB.BABY_ID, baby);
+		value.put(SmartBebeDataBase.CreateDB.HEIGHT_TIME, time);
+		value.put(SmartBebeDataBase.CreateDB.HEIGHT_VALUE, height);
+		
+		return mDB.insert(table, null, value);
+	}
+	
+	public long insertWeight(String table, int baby, String time, float weight) {
+		ContentValues value = new ContentValues();
+		value.put(SmartBebeDataBase.CreateDB.BABY_ID, baby);
+		value.put(SmartBebeDataBase.CreateDB.WEIGHT_TIME, time);
+		value.put(SmartBebeDataBase.CreateDB.WEIGHT_VALUE, weight);
+		
+		return mDB.insert(table, null, value);
+	}
+
+	public long insertBabyInfo(String table, String name, int gender, String day, float height, float weight) {
 		ContentValues value = new ContentValues();
 		value.put(SmartBebeDataBase.CreateDB.BABY_NAME, name);
 		value.put(SmartBebeDataBase.CreateDB.BABY_GENDER, gender);
@@ -119,15 +149,38 @@ public class SmartBebeDBOpenHelper {
 	public Cursor getMatchPolicyGroup(String table, String group) {
 		return mDB.rawQuery("select * from " + table + " where " + SmartBebeDataBase.CreateDB.POLICY_GROUP + "=" + "'" + group + "'", null);
 	}
-	
+
 	public Cursor getMatchAttr(String table, String attr, String name) {
 		return mDB.rawQuery("select * from " + table + " where " + attr + "=" + "'" + name + "'", null);
 	}
 	
+	public Cursor getOrderByAllColumns(String table, String attr) {
+		return mDB.rawQuery("select * from " + table + " order by " + attr + " collate nocase", null);
+	}
+//	SELECT * FROM TEST_TABLE ORDER BY testName COLLATE NOCASE;
 	public Cursor getAllColumns(String table) {
 		return mDB.query(table, null, null, null, null, null, null);
 	}
-
+	
+	public void deleteDiary(String table, String id){
+        String sql = "delete from " + table + " where diary_id = " + id + ";";
+        mDB.execSQL(sql);
+    }
+	
+	public void updateDiary(String table, int baby, String diary_id, String title, String time, String content,
+			String location, String vaccine, float height, float weight) {
+		ContentValues value = new ContentValues();
+		value.put(SmartBebeDataBase.CreateDB.BABY_ID, baby);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_TITLE, title);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_TIME, time);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_CONTENT, content);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_LOCATION, location);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_VACCINE, vaccine);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_HEIGHT, height);
+		value.put(SmartBebeDataBase.CreateDB.DIARY_WEIGHT, weight);
+        mDB.update(table, value, "diary_id" + " = " + diary_id, null);
+    }
+	
 	public Cursor getDiaryContentList(String createDiaryContent) {
 		return null;
 	}

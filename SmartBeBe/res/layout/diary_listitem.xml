@@ -45,13 +45,13 @@
 	            android:text="@string/default_string"/>
 	        
 	        <ImageButton
-	            android:id="@+id/diary_option_btn"
+	            android:id="@+id/diary_remove_btn"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:layout_marginTop="5dip"
+	            android:layout_marginTop="3dip"
 	            android:layout_marginRight="8dip"
 	            android:layout_marginLeft="8dip"
-	            android:src="@drawable/diary_down_arrow"
+	            android:src="@drawable/diary_remove_btn_50x50"
 	            android:background="@null"/>
 	    </LinearLayout>
 	    
@@ -85,7 +85,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="3dip"
 	            android:focusable="false"
-	            android:background="@drawable/diary_location_normal_128x128" />
+	            android:background="@drawable/diary_location_normal_99x99" />
 	        
 	        <ImageButton 
 	            android:id="@+id/diary_vaccine_btn"
@@ -93,7 +93,7 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="3dip"
 	            android:focusable="false"
-	            android:background="@drawable/diary_vaccine_normal_128x128" />
+	            android:background="@drawable/diary_vaccine_normal_99x99" />
 	        
 	        <ImageButton 
 	            android:id="@+id/diary_height_btn"
@@ -101,14 +101,14 @@
 	            android:layout_height="wrap_content"
 	            android:layout_marginRight="3dip"
 	            android:focusable="false"
-	            android:background="@drawable/diary_height_normal_128x128" />
+	            android:background="@drawable/diary_height_normal_99x99" />
 	        
 	        <ImageButton 
 	            android:id="@+id/diary_weight_btn"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
 	            android:focusable="false"
-	            android:background="@drawable/diary_weight_normal_128x128" />
+	            android:background="@drawable/diary_weight_normal_99x99" />
 	    </LinearLayout>
     </LinearLayout>
 

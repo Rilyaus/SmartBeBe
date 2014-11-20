@@ -24,7 +24,7 @@ import android.widget.*;
 public class Activity_Signup extends Activity implements OnClickListener {
 	private EditText name, height, weight;
 	private EditText year, month, day;
-	private Button signup_btn, add_btn;
+	private Button signup_btn, add_btn, close_btn;
 	private ImageButton picture;
 	private RadioButton male_radio, female_radio;
 	
@@ -54,12 +54,14 @@ public class Activity_Signup extends Activity implements OnClickListener {
 	    
 	    picture = (ImageButton)findViewById(R.id.baby_picture_btn);
 
+	    close_btn = (Button)findViewById(R.id.signup_close_btn);
 	    signup_btn = (Button)findViewById(R.id.baby_signup_btn);
 	    add_btn = (Button)findViewById(R.id.baby_add_btn);
 
 	    male_radio = (RadioButton)findViewById(R.id.baby_male_Radio);
 	    female_radio = (RadioButton)findViewById(R.id.baby_female_Radio);
 	    
+	    close_btn.setOnClickListener(this);
 	    signup_btn.setOnClickListener(this);
 	    add_btn.setOnClickListener(this);
 	    male_radio.setOnClickListener(this);
@@ -69,6 +71,9 @@ public class Activity_Signup extends Activity implements OnClickListener {
 	
 	public void onClick(View v) {
 		switch(v.getId()) {
+		case R.id.signup_close_btn :
+			finish();
+			break;
 		case R.id.baby_signup_btn :
 			String birthday = String.format("%04d%02d%02d",
 					Integer.parseInt(String.valueOf(year.getText())),
@@ -84,7 +89,17 @@ public class Activity_Signup extends Activity implements OnClickListener {
 			
 			break;
 		case R.id.baby_add_btn :
+			String birthday1 = String.format("%04d%02d%02d",
+					Integer.parseInt(String.valueOf(year.getText())),
+					Integer.parseInt(String.valueOf(month.getText())),
+					Integer.parseInt(String.valueOf(day.getText())));
 			
+			mDbOpenHelper.open();
+			mDbOpenHelper.insertBabyInfo(SmartBebeDataBase.CreateDB._TABLE_BABY_INFO, String.valueOf(name.getText()), gender, birthday1, 
+					Integer.parseInt(String.valueOf(height.getText())), Integer.parseInt(String.valueOf(weight.getText())));
+			
+			startActivity(new Intent(Activity_Signup.this, Activity_Signup.class));
+			finish();
 			break;
 		case R.id.baby_male_Radio :
 			gender = 0;

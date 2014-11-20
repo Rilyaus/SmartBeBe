@@ -3,6 +3,9 @@
     package="com.kw.smartbebe"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <uses-permission android:name="android.permission.INTERNET">
+	</uses-permission>
 
     <uses-sdk
         android:minSdkVersion="12"
@@ -40,6 +43,14 @@
         </activity>
         <activity
             android:name="com.smartbebe.policy.Activity_PolicyDetail"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.smartbebe.vaccine.Activity_VaccineDetail"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.smartbebe.culture.Activity_CultureDetail"
             android:theme="@android:style/Theme.NoTitleBar" >
         </activity>
     </application>

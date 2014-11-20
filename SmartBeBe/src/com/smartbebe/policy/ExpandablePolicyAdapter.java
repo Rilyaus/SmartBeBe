@@ -50,7 +50,6 @@ public class ExpandablePolicyAdapter extends BaseExpandableListAdapter {
          
         TextView text = (TextView)view.findViewById(R.id.policy_child_textView);
         text.setText(mPolicyData.get(groupPosition).policyList.get(childPosition));
-        
         text.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				TextView tv = (TextView)v;

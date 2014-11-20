@@ -8,6 +8,9 @@ public class SmartBebeDataBase {
 		public static final String _TABLE_DIARY_CONTENT = "diary_table";
 		public static final String _TABLE_VACCINE_CONTENT = "vaccine_table";
 		public static final String _TABLE_POLICY_CONTENT = "policy_table";
+		public static final String _TABLE_CULTURE_CONTENT = "culture_table";
+		public static final String _TABLE_HEIGHT_CONTENT = "height_table";
+		public static final String _TABLE_WEIGHT_CONTENT = "weight_table";
 		
 		public static final String BABY_ID = "baby_id";
 		public static final String BABY_NAME = "baby_name";
@@ -49,6 +52,35 @@ public class SmartBebeDataBase {
 		public static final String VACCINE_CURE = "vaccine_cure";
 		public static final String VACCINE_PREVENTION = "vaccine_prevention";
 		public static final String VACCINE_MONTH_TIME = "vaccine_month_time";
+
+		public static final String HEIGHT_ID = "height_id";
+		public static final String HEIGHT_TIME = "height_time";
+		public static final String HEIGHT_VALUE = "height_value";
+
+		public static final String WEIGHT_ID = "weight_id";
+		public static final String WEIGHT_TIME = "weight_time";
+		public static final String WEIGHT_VALUE = "weight_value";
+
+		public static final String CULTURE_ID = "culture_id";
+		public static final String CULTURE_NAME = "culture_name";
+		public static final String CULTURE_LINK = "culture_link";
+
+		public static final String _CREATE_CULTURE_CONTENT = 
+				"create table " + _TABLE_CULTURE_CONTENT + "(" + CULTURE_ID + " integer primary key, "
+						+ CULTURE_NAME + " text not null, "
+						+ CULTURE_LINK + " text not null);";
+		
+		public static final String _CREATE_WEIGHT_CONTENT = 
+				"create table " + _TABLE_WEIGHT_CONTENT + "(" + WEIGHT_ID + " integer primary key, "
+						+ BABY_ID + " integer not null, "
+						+ WEIGHT_TIME + " text not null, "
+						+ WEIGHT_VALUE + " real not null);";
+		
+		public static final String _CREATE_HEIGHT_CONTENT = 
+				"create table " + _TABLE_HEIGHT_CONTENT + "(" + HEIGHT_ID + " integer primary key, "
+						+ BABY_ID + " integer not null, "
+						+ HEIGHT_TIME + " text not null, "
+						+ HEIGHT_VALUE + " real not null);";
 		
 		public static final String _CREATE_VACCINE_CONTENT = 
 				"create table " + _TABLE_VACCINE_CONTENT + "(" + VACCINE_ID + " integer primary key, "
@@ -72,7 +104,7 @@ public class SmartBebeDataBase {
 
 		public static final String _CREATE_DIARY_CONTENT = 
 				"create table " + _TABLE_DIARY_CONTENT + "(" + DIARY_ID + " integer primary key, "
-						+ BABY_ID + " text not null, "
+						+ BABY_ID + " integer not null, "
 						+ DIARY_TITLE + " text not null, "
 						+ DIARY_TIME + " text not null, "
 						+ DIARY_CONTENT + " text not null, "

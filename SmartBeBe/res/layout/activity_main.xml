@@ -100,13 +100,13 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="1dip"
-            android:background="#000000" />
+            android:background="#BBBBBB" />
         
         <View
             android:layout_width="match_parent"
             android:layout_height="1dip"
             android:layout_marginTop="1dip"
-            android:background="#000000" />
+            android:background="#BBBBBB" />
         
         <ListView
             android:id="@+id/navi_menulist2"

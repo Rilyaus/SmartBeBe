@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:background="@color/smartbebe_red"
+        android:padding="5dip" >
+
+        <Button
+            android:id="@+id/vaccineDetail_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:padding="10dip"
+            android:text="@string/btn_text_close"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/vaccineDetail_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/menu_vaccine"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dip" >
+
+            <TextView
+                android:id="@+id/vaccineDetail_disease_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dip"
+                android:text="@string/default_string"
+                android:textSize="25sp"
+                android:textColor="#000000" />
+
+            
+            <!-- NAME TextView -->
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+                
+	            <TextView
+	                android:id="@+id/vaccineDetail_name_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_name_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_name_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+
+            
+            <!-- TIME TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_time_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+                
+	            <TextView
+	                android:id="@+id/vaccineDetail_time_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_time_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_time_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+            
+            <!-- CONTENT TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_content_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+	                
+	            <TextView
+	                android:id="@+id/vaccineDetail_content_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_content_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_content_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+            
+            <!-- CHANNEL TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_channel_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+	                
+	            <TextView
+	                android:id="@+id/vaccineDetail_channel_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_channel_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_channel_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+            
+            <!-- SYMPTON TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_sympton_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+	                
+	            <TextView
+	                android:id="@+id/vaccineDetail_sympton_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_sympton_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_sympton_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+            
+            <!-- CURE TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_cure_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+	                
+	            <TextView
+	                android:id="@+id/vaccineDetail_cure_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_cure_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_cure_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+            
+            <!-- PREVENTION TextView -->
+            <LinearLayout 
+                android:id="@+id/vaccine_Detail_prevention_linear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="15dip" >
+	                
+	            <TextView
+	                android:id="@+id/vaccineDetail_prevention_title_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/vaccineDetail_prevention_text"
+	                android:textColor="@color/smartbebe_red"
+	                android:textSize="20sp"
+	                android:textStyle="bold" />
+	
+	            <TextView
+	                android:id="@+id/vaccineDetail_prevention_content_textView"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginBottom="10dip"
+	                android:text="@string/default_long_string"
+	                android:textSize="16sp"
+	                android:textColor="#000000" />
+            </LinearLayout>
+            
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

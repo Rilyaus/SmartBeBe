@@ -3,19 +3,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
-    android:paddingTop="10dip" >
-    
+    android:background="#ffffff" >
+   	
     <LinearLayout
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
 	    android:orientation="vertical"
-	    android:background="#f2f2f2" >
+	    android:background="#ffffff" >
 	
+	   	<RelativeLayout 
+	   	    android:id="@+id/signup_title_relative"
+	       	android:layout_width="match_parent"
+	       	android:layout_height="wrap_content"
+	       	android:layout_gravity="center_vertical"
+	       	android:background="@color/smartbebe_red"
+	       	android:padding="5dip" >
+	       	
+	   		<TextView
+	   		    android:id="@+id/signup_title_textView"
+	   	    	android:layout_width="wrap_content"
+	   	    	android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:textColor="#ffffff"
+				android:textSize="20sp"
+				android:text="@string/menu_baby_add"/>
+	   		
+	   		<Button
+	   	    	android:id="@+id/signup_close_btn"
+	   	    	android:layout_width="wrap_content"
+	   	    	android:layout_height="wrap_content"
+				android:layout_alignParentRight="true"
+				android:text="@string/btn_text_cancel"
+				android:textColor="#ffffff"
+				android:textSize="16sp"
+				android:padding="10dip"
+				android:background="@null"/>
+   		</RelativeLayout>
+   		
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#ffffff"
+            android:background="#eeeeee"
             android:orientation="vertical">
             
 		    <ImageButton
@@ -23,9 +51,9 @@
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
 		        android:layout_gravity="center"
-		        android:layout_marginTop="20dip"
-		        android:layout_marginBottom="40dip"
-		        android:src="@drawable/smartbebe_icon_512x512"
+		        android:layout_marginTop="5dip"
+		        android:layout_marginBottom="5dip"
+		        android:src="@drawable/signup_camera_btn"
 		        android:background="@null" />
             
         </LinearLayout>
@@ -33,7 +61,7 @@
         <LinearLayout 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="25dip"
+            android:padding="20dip"
             android:orientation="vertical">
             
 		    <LinearLayout 
@@ -264,14 +292,6 @@
 		       android:orientation="horizontal"
 		       android:gravity="right"
 		       android:layout_marginTop="20dip">
-		    
-			    <Button 
-			        android:id="@+id/baby_signup_btn"
-			        android:layout_width="65dip"
-			        android:layout_height="wrap_content"
-			        android:text="@string/btn_text_complete"
-			        android:background="@null"
-	    			android:textSize="15sp" />
 			    
 			    <Button
 			        android:id="@+id/baby_add_btn"
@@ -279,6 +299,18 @@
 			        android:layout_width="wrap_content"
 			        android:text="@string/btn_text_more"
 			        android:background="@null"
+			        android:textColor="@color/smartbebe_red"
+	    			android:textSize="15sp" />
+		    
+			    <Button 
+			        android:id="@+id/baby_signup_btn"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/btn_text_complete"
+			        android:layout_marginLeft="35dip"
+			        android:layout_marginRight="10dip"
+			        android:background="@null"
+			        android:textColor="@color/smartbebe_red"
 	    			android:textSize="15sp" />
 			</LinearLayout>
             

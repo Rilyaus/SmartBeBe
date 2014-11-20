@@ -6,11 +6,13 @@ import java.util.Stack;
 import com.kw.smartbebe.R;
 import com.kw.smartbebe.R.id;
 import com.smartbebe.Tab_Home.BabyChange;
+import com.smartbebe.culture.Tab_Culture;
 import com.smartbebe.def.SmartBebeDBOpenHelper;
 import com.smartbebe.def.SmartBebeDataBase;
 import com.smartbebe.def.SmartBebePreference;
 import com.smartbebe.diary.Activity_DiaryWrite;
 import com.smartbebe.diary.Tab_Diary;
+import com.smartbebe.graph.Tab_Graph;
 import com.smartbebe.policy.Tab_Policy;
 import com.smartbebe.vaccine.Tab_Vaccine;
 
@@ -91,6 +93,13 @@ public class Activity_Main extends FragmentActivity implements OnClickListener, 
 		}
 	}
 	
+	public void onPause() {
+		super.onPause();
+		
+		
+	}
+	
+	
 	public void setHomeTab() {
 		Tab_Home homeFragment = new Tab_Home();
 		
@@ -106,9 +115,9 @@ public class Activity_Main extends FragmentActivity implements OnClickListener, 
 		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_vaccine), getResources().getDrawable(R.drawable.vaccine_128x128)));
 		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_growth), getResources().getDrawable(R.drawable.growth_128x128)));
 		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_policy), getResources().getDrawable(R.drawable.diary_128x128)));
-		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_culture), getResources().getDrawable(R.drawable.food_128x128)));
+		naviMenuArr1.add(new Navigation_MenuList(getResources().getString(R.string.menu_culture), getResources().getDrawable(R.drawable.culture_128x128)));
 
-		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_baby_add), getResources().getDrawable(R.drawable.mypage_128x128)));
+		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_baby_add), getResources().getDrawable(R.drawable.signup_128x128)));
 		naviMenuArr2.add(new Navigation_MenuList(getResources().getString(R.string.menu_setting), getResources().getDrawable(R.drawable.setting_128x128)));
 
 		nAdapter1 = new NaviMenuListAdapter(this, R.layout.navi_menulist_listitem, naviMenuArr1);
@@ -134,11 +143,23 @@ public class Activity_Main extends FragmentActivity implements OnClickListener, 
 						homeStack.push(temp);
 						ft.replace(R.id.mainview_linear, tVaccineFragment, "HomeTab");
 						break;
+					case 2 :
+						Tab_Graph tGraphFragment = new Tab_Graph();
+						
+						homeStack.push(temp);
+						ft.replace(R.id.mainview_linear, tGraphFragment, "HomeTab");
+						break;
 					case 3 :
 						Tab_Policy tPolicyFragment = new Tab_Policy();
 						
 						homeStack.push(temp);
 						ft.replace(R.id.mainview_linear, tPolicyFragment, "HomeTab");
+						break;
+					case 4 :
+						Tab_Culture tCultureFragment = new Tab_Culture();
+						
+						homeStack.push(temp);
+						ft.replace(R.id.mainview_linear, tCultureFragment, "HomeTab");
 						break;
 				}
 				ft.addToBackStack("HomeTab");

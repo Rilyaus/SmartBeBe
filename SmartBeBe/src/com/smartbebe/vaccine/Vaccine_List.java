@@ -3,11 +3,14 @@ package com.smartbebe.vaccine;
 import java.util.ArrayList;
 
 import com.kw.smartbebe.R;
+import com.smartbebe.policy.Activity_PolicyDetail;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.*;
 
 class Vaccine_List {
@@ -53,6 +56,15 @@ class Vaccine_ListAdapter extends BaseAdapter {
 		}
 		TextView name = (TextView)convertView.findViewById(R.id.vaccine_title_textView);
 		name.setText(pArr.get(position).name);
+        name.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				TextView tv = (TextView)v;
+				Intent intent = new Intent(context, Activity_VaccineDetail.class);
+				intent.putExtra("vaccine_name",	tv.getText());
+				
+				context.startActivity(intent);
+			}
+		});
 		
 		return convertView;
 	}

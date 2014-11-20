@@ -25,8 +25,9 @@ public class Tab_Vaccine extends Fragment implements OnClickListener {
 	private ListView private_listview, all_listview;
 	private ImageButton private_view_btn, all_view_btn;
 	
-	private ArrayList<Vaccine_List> vaccineArr;
-	private Vaccine_ListAdapter vaccineAdapter;
+	private ArrayList<Vaccine_List> vaccineArr, vaccinePArr;
+	private Vaccine_ListAdapter vaccineAdapter, vaccinePAdapter;
+	private long birthday_millis, current_millis;
 	private SmartBebeDBOpenHelper mDbOpenHelper;
 	private Cursor mCursor;
     private long nowMilliTime = Calendar.getInstance().getTimeInMillis();
@@ -34,13 +35,16 @@ public class Tab_Vaccine extends Fragment implements OnClickListener {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.tab_vaccine, container, false);
+
+		setPrivateList();
 		
 		private_view_btn = (ImageButton)v.findViewById(R.id.vaccine_private_view_btn);
 		all_view_btn = (ImageButton)v.findViewById(R.id.vaccine_all_view_btn);
 		private_listview = (ListView)v.findViewById(R.id.vaccine_private_listview);
 		all_listview = (ListView)v.findViewById(R.id.vaccine_all_listview);
-		
+
 		vaccineArr = new ArrayList<Vaccine_List>();
+		vaccinePArr = new ArrayList<Vaccine_List>();
 		
 		private_view_btn.setOnClickListener(this);
 		all_view_btn.setOnClickListener(this);
@@ -55,28 +59,40 @@ public class Tab_Vaccine extends Fragment implements OnClickListener {
 		
 		mCursor = mDbOpenHelper.getAllColumns(SmartBebeDataBase.CreateDB._TABLE_VACCINE_CONTENT);
 		
-		while(mCursor.moveToNext())
+		while(mCursor.moveToNext()) {
 			vaccineArr.add(new Vaccine_List(mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.VACCINE_DISEASE))));
-		
+			
+			String[] month_str = mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.VACCINE_MONTH_TIME)).split(",");
+			
+			for( int i=0 ; i<month_str.length ; i++ ) {
+				if( month_str[i].indexOf("~") == -1 ) {
+					long month_num1 = ((Integer.parseInt(month_str[i])) * 60 * 60 * 24 * 30 ) + birthday_millis;
+					long month_num2 = ((Integer.parseInt(month_str[i]) + 1) * 60 * 60 * 24 * 30 ) + birthday_millis;
+					
+					if( month_num1 < current_millis && month_num2 > current_millis ) {
+						Log.d("sply", "Vaccine");
+						vaccinePArr.add(new Vaccine_List(mCursor.getString(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.VACCINE_DISEASE))));	
+					}
+				}
+			}
+		}
+
 		vaccineAdapter = new Vaccine_ListAdapter(getActivity(), R.layout.vaccine_listitem, vaccineArr);
+		vaccinePAdapter = new Vaccine_ListAdapter(getActivity(), R.layout.vaccine_listitem, vaccinePArr);
 		
 		all_listview.setAdapter(vaccineAdapter);
-		
-		setPrivateList();
+		private_listview.setAdapter(vaccinePAdapter);
 		
 		mDbOpenHelper.close();
 	}
 	
 	public void setPrivateList() {
-	    Date mDate;
-	    
 		try {
 			String date_str = SmartBebePreference.CURRENT_BABY_BIRTHDAY;
 			SimpleDateFormat dateF = new SimpleDateFormat("yyyyMMdd");
-			mDate = dateF.parse(date_str);
-		    long birthday_millis = mDate.getTime();
-		    
-		    Log.d("sply", String.valueOf(birthday_millis));
+			Date mDate = dateF.parse(date_str);
+		    birthday_millis = mDate.getTime() / 1000;
+		    current_millis = System.currentTimeMillis() / 1000;
 		    
 		} catch (ParseException e) {
 			e.printStackTrace();

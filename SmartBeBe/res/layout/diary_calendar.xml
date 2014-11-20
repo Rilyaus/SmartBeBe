@@ -10,12 +10,15 @@
   	     android:layout_width="match_parent"
   	     android:orientation="horizontal">
   	     
-        <Button
-	         android:id="@+id/prev"
-	         android:layout_height="wrap_content"
-	         android:layout_width="match_parent"
-	         android:layout_weight="3"
-	         android:text="@string/left_button"/>
+		<Button
+			android:id="@+id/prev"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+			android:layout_weight="3"
+			android:background="@null"
+			android:text="@string/left_button"/>
 	  	
   	    	 
 	  	 <TextView
@@ -23,17 +26,22 @@
 	        android:layout_height="wrap_content"
 	  	    android:layout_width="match_parent"
 	  	    android:layout_weight="1"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
 	  	    android:gravity="center"
 	  	    android:textColor="#000000"
 	  	    android:text="0000-00"/>
 	  	 	
 	     
-  	      <Button
-  	          android:id="@+id/next"
-  	          android:layout_height="wrap_content"
-  	          android:layout_width="match_parent"
-  	          android:layout_weight="3"
-  	          android:text="@string/right_button"/> 
+		<Button
+			android:id="@+id/next"
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:layout_marginTop="10dip"
+			android:layout_marginBottom="10dip"
+			android:layout_weight="3"
+			android:background="@null"
+			android:text="@string/right_button"/> 
   	 </LinearLayout>
   	     
     
@@ -48,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="일"
+            android:text="@string/day_sun"
             android:textColor="#FF0000" />
 
         <TextView
@@ -56,42 +64,42 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="월" />
+            android:text="@string/day_mon" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="화" />
+            android:text="@string/day_tue" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="수" />
+            android:text="@string/day_wen" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="목" />
+            android:text="@string/day_thu" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="금" />
+            android:text="@string/day_fri" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="토"
+            android:text="@string/day_sat"
             android:textColor="#0100FF" />
     </LinearLayout>
 

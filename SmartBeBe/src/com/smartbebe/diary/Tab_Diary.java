@@ -4,6 +4,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 import com.kw.smartbebe.R;
@@ -11,25 +12,26 @@ import com.smartbebe.def.SmartBebeDBOpenHelper;
 import com.smartbebe.def.SmartBebeDataBase;
 import com.smartbebe.def.SmartBebePreference;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ImageButton;
+import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
 
 public class Tab_Diary extends Fragment implements OnClickListener {
 	private DiaryContentAdapter diaryAdapter;
 	private ListView diary_listview, calendar_listview;
 	private ImageButton diary_view_btn, calendar_view_btn;
 	private SmartBebeDBOpenHelper mDbOpenHelper;
-	
+	private Boolean isResume = false;
+
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.tab_diary, container, false);
@@ -39,31 +41,43 @@ public class Tab_Diary extends Fragment implements OnClickListener {
 		
 		calendar_listview = (ListView)v.findViewById(R.id.diary_listview2);
 		diary_listview = (ListView)v.findViewById(R.id.diary_listview);
-
+		
 		diary_view_btn.setOnClickListener(this);
 		calendar_view_btn.setOnClickListener(this);
 		
-		diary_listview.setOnItemClickListener(new OnItemClickListener() {
-			public void onItemClick(AdapterView<?> av, View v, int position, long id) {
-			/*	Fragment temp = getSupportFragmentManager().findFragmentById(R.id.mainview_linear);
-				FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-				
-				switch((int)id) {
-					case 0 : {
-						Tab_Diary tDiaryFragment = new Tab_Diary();
-						
-						homeStack.push(temp);
-						ft.replace(R.id.mainview_linear, tDiaryFragment, "HomeTab");
-					}
-				}
-				ft.addToBackStack("HomeTab");
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
-				ft.commitAllowingStateLoss();*/
-			}
-		});
 		setDiaryContent();
 		
+		diary_listview.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> av, View v, int position, long id) {
+				Intent intent = new Intent(getActivity(), Activity_DiaryWrite.class);
+				intent.putExtra("isModify", true);
+				intent.putExtra("diary_id", av.getItemIdAtPosition(position));
+				
+				startActivity(intent);
+			}
+		});
+		
 		return v;
+	}
+	
+	public void onResume() {
+		super.onResume();
+		
+		if( isResume ) {
+			isResume = false;
+			Fragment frg = null;
+			frg = getActivity().getSupportFragmentManager().findFragmentByTag("HomeTab");
+			final FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+			ft.detach(frg);
+			ft.attach(frg);
+			ft.commit();
+		}
+	}
+	
+	public void onPause() {
+		super.onPause();
+		
+		isResume = true;
 	}
 	
 	public void onClick(View v) {
@@ -85,7 +99,8 @@ public class Tab_Diary extends Fragment implements OnClickListener {
 		mDbOpenHelper = new SmartBebeDBOpenHelper(getActivity());
 		mDbOpenHelper.open();
 
-		mCursor = mDbOpenHelper.getAllColumns(SmartBebeDataBase.CreateDB._TABLE_DIARY_CONTENT);
+		mCursor = mDbOpenHelper.getOrderByAllColumns(SmartBebeDataBase.CreateDB._TABLE_DIARY_CONTENT, SmartBebeDataBase.CreateDB.DIARY_TIME);
+		Log.d("sply", String.valueOf(mCursor.getCount()));
 		
 		try {
 			while( mCursor.moveToNext() ) {
@@ -106,6 +121,7 @@ public class Tab_Diary extends Fragment implements OnClickListener {
 							mCursor.getFloat(mCursor.getColumnIndex(SmartBebeDataBase.CreateDB.DIARY_WEIGHT))));
 				}
 			}
+			Collections.reverse(diaryContentList);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
